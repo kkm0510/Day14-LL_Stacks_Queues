@@ -20,5 +20,6 @@ public class UseLinkedList {
         list.delete(node4);
         list.printMyNodes();
         System.out.println(list.getSize());
+
     }
 }
