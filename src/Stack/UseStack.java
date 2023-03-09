@@ -19,5 +19,8 @@ public class UseStack {
         stack.push(node1);
 
         stack.printStack();
+        System.out.println(stack.peak().getKey());
+        System.out.println(stack.pop());
+        stack.printStack();
     }
 }
