@@ -61,6 +61,15 @@ public class MyLinkedList<K> {
         return tempNode;
     }
 
+    public void insertAfter(INode<K> newNode, INode<K> leftNode) {
+        INode<K> tempNode = head;
+        while (tempNode != leftNode) {
+            tempNode = tempNode.getNext();
+        }
+        newNode.setNext(tempNode.getNext());
+        tempNode.setNext(newNode);
+    }
+
 
     public void printMyNodes() {
         System.out.println("My Nodes : " + head);
