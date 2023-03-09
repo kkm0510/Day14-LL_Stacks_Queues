@@ -11,8 +11,8 @@ public class UseLinkedList {
         INode<Integer> node3 = new MyNode<>();
         node3.setKey(70);
         list.appendNode(node1);
-        list.appendNode(node2);
         list.appendNode(node3);
+        list.insertBetween(node2, node1, node3);
         list.printMyNodes();
     }
 }

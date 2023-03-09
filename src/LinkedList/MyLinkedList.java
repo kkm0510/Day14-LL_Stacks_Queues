@@ -28,6 +28,15 @@ public class MyLinkedList<K> {
         }
     }
 
+    public void insertBetween(INode<K> newNode, INode<K> leftNode, INode<K> rightNode){
+        INode<K> tempNode=head;
+        while(tempNode!=leftNode){
+            tempNode=tempNode.getNext();
+        }
+        tempNode.setNext(newNode);
+        newNode.setNext(rightNode);
+    }
+
     public void printMyNodes() {
         System.out.println("My Nodes : " + head);
     }
