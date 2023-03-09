@@ -6,8 +6,8 @@ import LinkedList.MyLinkedList;
 public class MyStack<K> {
     MyLinkedList<K> myLinkedList;
 
-    MyStack(){
-        myLinkedList=new MyLinkedList<>();
+    MyStack() {
+        myLinkedList = new MyLinkedList<>();
     }
 
     public void push(INode<K> node1) {
@@ -24,5 +24,13 @@ public class MyStack<K> {
 
     public INode<K> pop() {
         return myLinkedList.pop();
+    }
+
+    public boolean isEmpty() {
+        return myLinkedList.getSize() == 0;
+    }
+
+    public int size(){
+        return myLinkedList.getSize();
     }
 }

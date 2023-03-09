@@ -46,6 +46,9 @@ public class MyLinkedList<K> {
     }
 
     public INode<K> pop() {
+        if(size==0){
+            return null;
+        }
         size--;
         INode<K> deletedNode = head;
         head = (head.getNext());
@@ -54,6 +57,9 @@ public class MyLinkedList<K> {
     }
 
     public INode<K> popLast() {
+        if(size==0){
+            return null;
+        }
         size--;
         INode<K> deletedNode = tail;
         INode<K> tempNode = head;
@@ -82,12 +88,13 @@ public class MyLinkedList<K> {
     }
 
     public void delete(INode<K> node) {
-        size--;
         INode<K> tempNode = head;
-        while (tempNode.getNext() != node) {
+        while (tempNode!=null && tempNode.getNext() != node) {
             tempNode = tempNode.getNext();
         }
+        if(tempNode==null) return;
         tempNode.setNext(tempNode.getNext().getNext());
+        size--;
     }
 
 

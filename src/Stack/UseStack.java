@@ -22,5 +22,11 @@ public class UseStack {
         System.out.println(stack.peak().getKey());
         System.out.println(stack.pop());
         stack.printStack();
+        System.out.println(stack.size());
+        System.out.println(stack.isEmpty());
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        System.out.println(stack.isEmpty());
     }
 }
