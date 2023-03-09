@@ -17,6 +17,17 @@ public class MyLinkedList<K> {
         }
     }
 
+    public void appendNode(INode<K> newNode){
+        if (this.tail == null)
+            this.tail = newNode;
+        if (this.head == null)
+            this.head = newNode;
+        else {
+            this.tail.setNext(newNode);
+            this.tail=newNode;
+        }
+    }
+
     public void printMyNodes() {
         System.out.println("My Nodes : " + head);
     }

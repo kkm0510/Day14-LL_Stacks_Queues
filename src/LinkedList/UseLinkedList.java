@@ -10,9 +10,9 @@ public class UseLinkedList {
         node2.setKey(30);
         INode<Integer> node3 = new MyNode<>();
         node3.setKey(70);
-        list.addNode(node3);
-        list.addNode(node2);
-        list.addNode(node1);
+        list.appendNode(node1);
+        list.appendNode(node2);
+        list.appendNode(node3);
         list.printMyNodes();
     }
 }
