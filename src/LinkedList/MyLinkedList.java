@@ -54,6 +54,13 @@ public class MyLinkedList<K> {
         return deletedNode;
     }
 
+    public INode<K> searchNode(K key){
+        INode<K> tempNode = head;
+        while (tempNode.getKey() != key)
+            tempNode = (tempNode.getNext());
+        return tempNode;
+    }
+
 
     public void printMyNodes() {
         System.out.println("My Nodes : " + head);
