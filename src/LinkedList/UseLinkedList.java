@@ -3,7 +3,7 @@ package LinkedList;
 public class UseLinkedList {
 
     public static void main(String[] args) {
-        MyLinkedList<Integer> list = new MyLinkedList<>();
+        SortedLinkedList<Integer> list = new SortedLinkedList<>();
         INode<Integer> node1 = new MyNode<>();
         node1.setKey(56);
         INode<Integer> node2 = new MyNode<>();
@@ -12,12 +12,10 @@ public class UseLinkedList {
         node3.setKey(70);
         INode<Integer> node4 = new MyNode<>();
         node4.setKey(40);
-        list.appendNode(node1);
-        list.appendNode(node2);
-        list.appendNode(node4);
-        list.appendNode(node3);
-        System.out.println(list.getSize());
-        list.delete(node4);
+        list.add(node1);
+        list.add(node2);
+        list.add(node4);
+        list.add(node3);
         list.printMyNodes();
         System.out.println(list.getSize());
 

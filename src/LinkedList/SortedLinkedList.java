@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class MyLinkedList<K> {
+public class SortedLinkedList<K extends Comparable<K>> {
 
     public INode<K> head;
     public INode<K> tail;
@@ -10,7 +10,7 @@ public class MyLinkedList<K> {
         return size;
     }
 
-    public void addNode(INode<K> newNode) {
+    private void addFirst(INode<K> newNode) {
         if (this.tail == null)
             this.tail = newNode;
         if (this.head == null)
@@ -20,17 +20,23 @@ public class MyLinkedList<K> {
             this.head = newNode;
             this.head.setNext(tempNode);
         }
-        size++;
     }
 
-    public void appendNode(INode<K> newNode) {
+    public void add(INode<K> newNode) {
         if (this.tail == null)
             this.tail = newNode;
         if (this.head == null)
             this.head = newNode;
+        else if(head.getNext()==null && head.getKey().compareTo(newNode.getKey())>0){
+            addFirst(newNode);
+        }
         else {
-            this.tail.setNext(newNode);
-            this.tail = newNode;
+            INode<K> tempNode = head;
+            while (tempNode.getNext()!=null && tempNode.getNext().getKey().compareTo(newNode.getKey()) < 0) {
+                tempNode = tempNode.getNext();
+            }
+            newNode.setNext(tempNode.getNext());
+            tempNode.setNext(newNode);
         }
         size++;
     }
