@@ -14,8 +14,11 @@ public class UseLinkedList {
         node4.setKey(40);
         list.appendNode(node1);
         list.appendNode(node2);
+        list.appendNode(node4);
         list.appendNode(node3);
-        list.insertAfter(node4, node2);
+        System.out.println(list.getSize());
+        list.delete(node4);
         list.printMyNodes();
+        System.out.println(list.getSize());
     }
 }

@@ -4,6 +4,11 @@ public class MyLinkedList<K> {
 
     public INode<K> head;
     public INode<K> tail;
+    private int size;
+
+    public int getSize() {
+        return size;
+    }
 
     public void addNode(INode<K> newNode) {
         if (this.tail == null)
@@ -15,6 +20,7 @@ public class MyLinkedList<K> {
             this.head = newNode;
             this.head.setNext(tempNode);
         }
+        size++;
     }
 
     public void appendNode(INode<K> newNode) {
@@ -26,6 +32,7 @@ public class MyLinkedList<K> {
             this.tail.setNext(newNode);
             this.tail = newNode;
         }
+        size++;
     }
 
     public void insertBetween(INode<K> newNode, INode<K> leftNode, INode<K> rightNode) {
@@ -35,9 +42,11 @@ public class MyLinkedList<K> {
         }
         tempNode.setNext(newNode);
         newNode.setNext(rightNode);
+        size++;
     }
 
     public INode<K> pop() {
+        size--;
         INode<K> deletedNode = head;
         head = (head.getNext());
         deletedNode.setNext(null);
@@ -45,6 +54,7 @@ public class MyLinkedList<K> {
     }
 
     public INode<K> popLast() {
+        size--;
         INode<K> deletedNode = tail;
         INode<K> tempNode = head;
         while (tempNode.getNext() != tail)
@@ -54,7 +64,7 @@ public class MyLinkedList<K> {
         return deletedNode;
     }
 
-    public INode<K> searchNode(K key){
+    public INode<K> searchNode(K key) {
         INode<K> tempNode = head;
         while (tempNode.getKey() != key)
             tempNode = (tempNode.getNext());
@@ -68,6 +78,16 @@ public class MyLinkedList<K> {
         }
         newNode.setNext(tempNode.getNext());
         tempNode.setNext(newNode);
+        size++;
+    }
+
+    public void delete(INode<K> node) {
+        size--;
+        INode<K> tempNode = head;
+        while (tempNode.getNext() != node) {
+            tempNode = tempNode.getNext();
+        }
+        tempNode.setNext(tempNode.getNext().getNext());
     }
 
 
