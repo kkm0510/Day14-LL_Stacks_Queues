@@ -18,4 +18,16 @@ public class MyQueue<K> {
     public void printQueue() {
         myLinkedList.printMyNodes();
     }
+
+    public INode<K> dequeue() {
+        return myLinkedList.popLast();
+    }
+
+    public boolean isEmpty() {
+        return myLinkedList.getSize() == 0;
+    }
+
+    public int size(){
+        return myLinkedList.getSize();
+    }
 }

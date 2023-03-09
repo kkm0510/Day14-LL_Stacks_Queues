@@ -61,6 +61,12 @@ public class MyLinkedList<K> {
             return null;
         }
         size--;
+        if(tail==head){
+            INode<K> deletedNode = tail;
+            head=null;
+            tail=null;
+            return deletedNode;
+        }
         INode<K> deletedNode = tail;
         INode<K> tempNode = head;
         while (tempNode.getNext() != tail)
