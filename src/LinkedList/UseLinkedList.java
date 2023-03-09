@@ -13,6 +13,7 @@ public class UseLinkedList {
         list.appendNode(node1);
         list.appendNode(node3);
         list.insertBetween(node2, node1, node3);
+        System.out.println(list.pop());
         list.printMyNodes();
     }
 }

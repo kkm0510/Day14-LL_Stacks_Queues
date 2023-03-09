@@ -17,24 +17,31 @@ public class MyLinkedList<K> {
         }
     }
 
-    public void appendNode(INode<K> newNode){
+    public void appendNode(INode<K> newNode) {
         if (this.tail == null)
             this.tail = newNode;
         if (this.head == null)
             this.head = newNode;
         else {
             this.tail.setNext(newNode);
-            this.tail=newNode;
+            this.tail = newNode;
         }
     }
 
-    public void insertBetween(INode<K> newNode, INode<K> leftNode, INode<K> rightNode){
-        INode<K> tempNode=head;
-        while(tempNode!=leftNode){
-            tempNode=tempNode.getNext();
+    public void insertBetween(INode<K> newNode, INode<K> leftNode, INode<K> rightNode) {
+        INode<K> tempNode = head;
+        while (tempNode != leftNode) {
+            tempNode = tempNode.getNext();
         }
         tempNode.setNext(newNode);
         newNode.setNext(rightNode);
+    }
+
+    public INode<K> pop() {
+        INode<K> deletedNode = head;
+        head = (head.getNext());
+        deletedNode.setNext(null);
+        return deletedNode;
     }
 
     public void printMyNodes() {
