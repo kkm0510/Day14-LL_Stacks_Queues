@@ -44,6 +44,17 @@ public class MyLinkedList<K> {
         return deletedNode;
     }
 
+    public INode<K> popLast() {
+        INode<K> deletedNode = tail;
+        INode<K> tempNode = head;
+        while (tempNode.getNext() != tail)
+            tempNode = (tempNode.getNext());
+        tail = tempNode;
+        tail.setNext(null);
+        return deletedNode;
+    }
+
+
     public void printMyNodes() {
         System.out.println("My Nodes : " + head);
     }
