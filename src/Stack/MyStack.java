@@ -11,7 +11,7 @@ public class MyStack<K> {
     }
 
     public void push(INode<K> node1) {
-        myLinkedList.addNode(node1);
+        myLinkedList.add(node1);
     }
 
     public void printStack() {

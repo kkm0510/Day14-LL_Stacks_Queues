@@ -12,14 +12,14 @@ public class UseLinkedList {
         node3.setKey(70);
         INode<Integer> node4 = new MyNode<>();
         node4.setKey(40);
-        list.appendNode(node1);
-        list.appendNode(node2);
-        list.appendNode(node4);
-        list.appendNode(node3);
+        list.append(node1);
+        list.append(node2);
+        list.append(node4);
+        list.append(node3);
         System.out.println(list.getSize());
-        list.delete(node4);
         list.printMyNodes();
-        System.out.println(list.getSize());
+        System.out.println(list);
+        System.out.println(list.search(40));
 
     }
 }

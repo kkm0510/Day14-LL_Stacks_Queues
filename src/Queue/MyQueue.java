@@ -12,7 +12,7 @@ public class MyQueue<K> {
     }
 
     public void enqueue(INode<K> node) {
-        myLinkedList.appendNode(node);
+        myLinkedList.append(node);
     }
 
     public void printQueue() {

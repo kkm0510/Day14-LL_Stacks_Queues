@@ -10,7 +10,7 @@ public class MyLinkedList<K> {
         return size;
     }
 
-    public void addNode(INode<K> newNode) {
+    public void add(INode<K> newNode) {
         if (this.tail == null)
             this.tail = newNode;
         if (this.head == null)
@@ -23,7 +23,7 @@ public class MyLinkedList<K> {
         size++;
     }
 
-    public void appendNode(INode<K> newNode) {
+    public void append(INode<K> newNode) {
         if (this.tail == null)
             this.tail = newNode;
         if (this.head == null)
@@ -46,7 +46,7 @@ public class MyLinkedList<K> {
     }
 
     public INode<K> pop() {
-        if(size==0){
+        if (size == 0) {
             return null;
         }
         size--;
@@ -57,14 +57,14 @@ public class MyLinkedList<K> {
     }
 
     public INode<K> popLast() {
-        if(size==0){
+        if (size == 0) {
             return null;
         }
         size--;
-        if(tail==head){
+        if (tail == head) {
             INode<K> deletedNode = tail;
-            head=null;
-            tail=null;
+            head = null;
+            tail = null;
             return deletedNode;
         }
         INode<K> deletedNode = tail;
@@ -76,9 +76,9 @@ public class MyLinkedList<K> {
         return deletedNode;
     }
 
-    public INode<K> searchNode(K key) {
+    public INode<K> search(K key) {
         INode<K> tempNode = head;
-        while (tempNode.getKey() != key)
+        while (tempNode!=null && !tempNode.getKey().equals(key))
             tempNode = (tempNode.getNext());
         return tempNode;
     }
@@ -95,16 +95,19 @@ public class MyLinkedList<K> {
 
     public void delete(INode<K> node) {
         INode<K> tempNode = head;
-        while (tempNode!=null && tempNode.getNext() != node) {
+        while (tempNode != null && tempNode.getNext() != node) {
             tempNode = tempNode.getNext();
         }
-        if(tempNode==null) return;
+        if (tempNode == null) return;
         tempNode.setNext(tempNode.getNext().getNext());
         size--;
     }
 
-
     public void printMyNodes() {
         System.out.println("My Nodes : " + head);
+    }
+
+    public String toString() {
+        return "MyLinkedListNodes{" + head + "}";
     }
 }
